@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>STD Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large  w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-small">About</a>
+	<a href="facts.html" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-small">Facts</a>
+    <a href="symptoms.html" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-small">Symptoms</a>
+    <a href="testing.html" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-small">Testing</a>
+    <a href="treatment.html" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-small">Treatments</a>
+    <a href="partner.html" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-small">Partner Care</a>
+    <a href="resources.html" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-small">Resources</a>
+    <a href="faq.html" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-small">FAQ</a>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-medium w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-top" style="margin-top:46px">
+ <a href="index.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About</a>
+  <a href="facts.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Facts</a>
+  <a href="symptoms.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Symptoms</a>
+  <a href="testing.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Testing</a>
+  <a href="treatment.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Treatments</a>
+  <a href="partner.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Partner Care</a>
+  <a href="resources.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Resources</a>
+  <a href="faq.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="landing21.png" style="width:100%">
+    <div class="w3-display-right w3-container w3-text-white w3-padding-32">
+     <b> <h1 class="w3-text-white" style="text-shadow:1px 1px 0 #444;text-align:right; font-color=#F5F5F5">FACTS</h1>  </b>
+    </div>
+  </div>
+
+
+  <!-- The Band Section -->
+<div class="w3-row-padding w3-margin-top">
+
+<div class="w3-third">
+<div class="w3-card">
+<img src="c18.jpg" style="width:100%" id="fact-card-one-image-one">
+<img src="c27.jpg" style="width:100%" id="fact-card-one-image-two">
+<div class="w3-container">
+<h4>Gonorrhea can be cured with the right treatment</h4>
+<h4>Gonorrhea (gon a REE a) is a sexually transmitted disease (STD)</h4>
+<h4 id="africa-fact"> It is more prevalent among African American </h4>
+</div>
+</div>
+</div>
+
+<div class="w3-third">
+<div class="w3-card">
+<img src="c17.png" style="width:100%" id="fact-card-two-image-one">
+<img src="c28.jpg" style="width:100%" id="fact-card-two-image-two">
+<div class="w3-container">
+<h4 id="below-fact">It is more common among teens and young adults</h4>
+<h4>Anyone who is sexually active can get gonorrhea. <h4>
+<h4>You can pass gonorrhea to others without knowing it</h4>
+</div>
+</div>
+</div>
+
+<div class="w3-third">
+<div class="w3-card">
+<img src="c26.jpg" style="width:100%" id="fact-card-three-image-one">
+<img src="c14.png" style="width:100%" id="fact-card-three-image-two">
+<div class="w3-container">
+<h4>Many people who have gonorrhea don’t know it. <h4>
+<h4 id="women-fact">Especially in women, the disease often has no symptoms</h4>
+<h4>If you do not treat gonorrhea, it can lead to serious health problems</h4>
+</div>
+</div>
+</div>
+
+</div>
+
+ 
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Image of location/map -->
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-16 w3-center w3-opacity w3-light-grey w3-xlarge">
+
+
+</footer>
+
+<script>
+
+var myIndex = 0;
+carousel();
+
+var selectedAge = sessionStorage.getItem("age");
+if(selectedAge == 'Above 25')
+{
+ document.getElementById("below-fact").style.display = "none";   
+}
+var selectedGender = sessionStorage.getItem("gender");
+if(selectedGender == 'Male')
+{
+ document.getElementById("women-fact").style.display = "none"; 
+}
+var selectedRace = sessionStorage.getItem("race");
+if(selectedRace == 'Caucasian American')
+{
+ document.getElementById("africa-fact").style.display = "none"; 
+ document.getElementById("fact-card-one-image-two").style.display = "none"; 
+ document.getElementById("fact-card-two-image-two").style.display = "none"; 
+ document.getElementById("fact-card-three-image-two").style.display = "none"; 
+}
+else{
+ document.getElementById("fact-card-one-image-one").style.display = "none"; 
+ document.getElementById("fact-card-two-image-one").style.display = "none"; 
+ document.getElementById("fact-card-three-image-one").style.display = "none";
+}
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
