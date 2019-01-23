@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>STD Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-top" >
+  
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="landing21.png" style="width:100%">
+    <div class="w3-display-right w3-container w3-text-white w3-padding-32">
+     <b> <h1 class="w3-text-white" style="text-shadow:1px 1px 0 #444;text-align:right; font-color=#F5F5F5">ABOUT YOU</h1>  </b>
+    </div>
+  </div>
+
+
+  <!-- The Band Section -->
+<div class="w3-row-padding w3-margin-top">
+
+<div class="w3-third">
+<div class="w3-card">
+<div class="w3-container"><br>
+<div class="w3-container w3-teal">
+  <h4>Select your gender</h4>
+</div>
+<br>
+<input type="radio" name="gender" value="Male" id="male" checked="checked"> <b>Male</b><br><br>
+<input type="radio" name="gender" value="Female" id="female"> <b>Female</b><br><br>
+</div>
+</div>
+</div>
+
+<div class="w3-third">
+<div class="w3-card">
+<div class="w3-container"><br>
+<div class="w3-container w3-teal">
+  <h4>Select your age</h4>
+</div>
+<br>
+<input type="radio" name="age" value="Below 25" id="below" checked="checked"> <b> Below 25</b><br><br>
+<input type="radio" name="age" value="Above 25" id="above"> <b>Above 25</b><br><br>
+</div>
+</div>
+</div>
+
+<div class="w3-third">
+<div class="w3-card">
+<div class="w3-container"><br>
+<div class="w3-container w3-teal">
+  <h4>Select your ethnicity</h4>
+</div>
+<br>
+<input type="radio" name="race" value="Caucasian American" id="caucasian" checked="checked"><b> Caucasian American</b><br><br>
+<input type="radio" name="race" value="African Americam" id="african"> <b>African Americam</b><br><br>
+</div>
+</div>
+</div>
+
+</div>
+
+<div onclick=(valueStored()) class="w3-container w3-padding-16 w3-center w3-opacity w3-light-grey w3-xlarge"><button class="w3-btn w3-white w3-center w3-border w3-border-teal w3-round-large">Submit</button></div> 
+  
+<!-- End Page Content -->
+
+</div>
+<!-- Image of location/map -->
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-16 w3-center w3-opacity w3-light-grey w3-xlarge">
+
+
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+function valueStored() {
+   var getGender;
+   var getAge;
+   var getRace;
+   if (document.getElementById('male').checked) {
+		getGender = document.getElementById('male').value;
+	}
+	else{
+		getGender = document.getElementById('female').value;
+	}
+	if (document.getElementById('below').checked) {
+		getAge = document.getElementById('below').value;
+	}
+	else{
+		getAge = document.getElementById('above').value;
+	}
+	if (document.getElementById('caucasian').checked) {
+		getRace = document.getElementById('caucasian').value;
+	}
+	else{
+		getRace = document.getElementById('african').value;
+	}
+   sessionStorage.setItem("gender",getGender);
+   sessionStorage.setItem("age",getAge);
+   sessionStorage.setItem("race",getRace);
+   window.location.href='facts.html';
+}
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
